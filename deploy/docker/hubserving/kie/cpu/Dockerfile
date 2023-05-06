@@ -43,4 +43,4 @@ RUN hub install deploy/hubserving/kie_ser_re/
 EXPOSE 8866
 
 # CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system"]
-CMD ["/bin/bash","-c","hub serving start -m kie_ser_re key_ser"]
+CMD ["/bin/bash","-c","hub serving start -m kie_ser_re kie_ser"]

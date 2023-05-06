@@ -31,14 +31,7 @@ RUN tar xf /PaddleOCR/inference/ser_vi_layoutxlm_xfund_infer.tar -C /PaddleOCR/i
 ADD https://paddleocr.bj.bcebos.com/ppstructure/models/vi_layoutxlm/re_vi_layoutxlm_xfund_infer.tar /PaddleOCR/inference/
 RUN tar xf /PaddleOCR/inference/re_vi_layoutxlm_xfund_infer.tar -C /PaddleOCR/inference/
 
-# 安装关键信息抽取SER服务模块：  
-RUN hub install deploy/hubserving/kie_ser/
-
-# 安装关键信息抽取SER+RE服务模块：  
-RUN hub install deploy/hubserving/kie_ser_re/
-
-
 EXPOSE 8866
 
 # CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system"]
-CMD ["/bin/bash","-c","hub serving start -m kie_ser_re key_ser"]
+CMD ["/bin/bash","-c","hub install deploy/hubserving/kie_ser/ && hub install deploy/hubserving/kie_ser_re/ && hub serving start -m kie_ser_re kie_ser"]
