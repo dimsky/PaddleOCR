@@ -1,0 +1,21 @@
+{
+  "modules_info": {
+    "kie_ser": {
+      "init_args": {
+        "version": "1.0.0",
+        "use_gpu": true
+      },
+      "predict_args": {}
+    },
+    "kie_ser_re": {
+      "init_args": {
+        "version": "1.0.0",
+        "use_gpu": true
+      },
+      "predict_args": {}
+    }
+  },
+  "port": 8866,
+  "use_multiprocess": true,
+  "workers": 3
+}

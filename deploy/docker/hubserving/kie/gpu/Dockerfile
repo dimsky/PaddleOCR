@@ -34,4 +34,4 @@ RUN tar xf /PaddleOCR/inference/re_vi_layoutxlm_xfund_infer.tar -C /PaddleOCR/in
 EXPOSE 8866
 
 # CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system"]
-CMD ["/bin/bash","-c","hub install deploy/hubserving/kie_ser/ && hub install deploy/hubserving/kie_ser_re/ && hub serving start -m kie_ser_re kie_ser"]
+CMD ["/bin/bash","-c","hub install deploy/hubserving/kie_ser/ && hub install deploy/hubserving/kie_ser_re/ && hub serving start -c deploy/hubserving/kie/config.json"]
