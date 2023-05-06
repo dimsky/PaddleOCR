@@ -9,7 +9,7 @@ RUN pip3.7 install --upgrade pip -i https://mirror.baidu.com/pypi/simple
 
 RUN pip3.7 install paddlehub --upgrade -i https://mirror.baidu.com/pypi/simple
 
-RUN git clone https://ghproxy.com/https://github.com/PaddlePaddle/PaddleOCR.git /PaddleOCR
+RUN git clone https://ghproxy.com/https://github.com/dimsky/PaddleOCR.git /PaddleOCR
 
 WORKDIR /PaddleOCR
 
@@ -34,4 +34,4 @@ RUN tar xf /PaddleOCR/inference/re_vi_layoutxlm_xfund_infer.tar -C /PaddleOCR/in
 EXPOSE 8866
 
 # CMD ["/bin/bash","-c","hub install deploy/hubserving/ocr_system/ && hub serving start -m ocr_system"]
-CMD ["/bin/bash","-c","hub install deploy/hubserving/kie_ser/ && hub install deploy/hubserving/kie_ser_re/ && hub serving start -c deploy/hubserving/kie/config.json"]
+CMD ["/bin/bash","-c","hub install deploy/hubserving/kie_ser/ && hub install deploy/hubserving/kie_ser_re/ && hub serving start -c deploy/docker/hubserving/kie/config.json"]
